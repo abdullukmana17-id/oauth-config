@@ -39,7 +39,6 @@ class OAuthConfigModel extends Model
         'client_secret'  => 'required|max_length[255]',
         'allow_login'    => 'required|in_list[0,1]',
         'allow_register' => 'required|in_list[0,1]',
-        'is_enabled'     => 'required|in_list[0,1]',
     ];
     protected $validationMessages   = [
         'provider' => [
