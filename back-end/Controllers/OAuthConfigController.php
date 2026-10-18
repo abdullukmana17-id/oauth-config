@@ -17,8 +17,15 @@ class OAuthConfigController extends BaseController
 
     public function index()
     {
-        $data = $this->oauthConfigModel->findAll();
-        return $this->respond($data, 200);
+        $configs = $this->oauthConfigModel->findAll();
+
+        $safeConfigs = array_map(function ($config) {
+            unset($config['client_secret']);
+
+            return $config;
+        }, $configs);
+
+        return $this->respond($safeConfigs, 200);
     }
 
     public function update($id = null)
@@ -51,7 +58,6 @@ class OAuthConfigController extends BaseController
             'client_secret',
             'allow_login',
             'allow_register',
-            'is_enabled',
         ];
 
         $data = array_intersect_key(
