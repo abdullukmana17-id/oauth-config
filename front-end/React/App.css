@@ -1,0 +1,44 @@
+@import url('https://fonts.googleapis.com/css2?family=Instrument+Sans:ital,wght@0,400..700;1,400..700&family=Instrument+Serif:ital@0;1&family=JetBrains+Mono:ital,wght@0,100..800;1,100..800&display=swap');
+
+:root,
+[data-bs-theme=light] {
+  --bs-font-sans-serif: "Instrument Sans", sans-serif;
+  --bs-font-monospace:  "JetBrains Mono", monospace;
+  --bs-code-color: var(--bs-body-color);
+}
+
+:is(h1, h2, h3, h4, h5, h6):is(.display-1, .display-2, .display-3, .display-4, .display-5, .display-6) {
+  letter-spacing: 1px;
+  font-family: "Instrument Serif", serif;
+}
+
+.icon {
+  width: calc(2.5 * var(--bs-body-font-size));
+  height: calc(2.5 * var(--bs-body-font-size));
+}
+
+.btn-light {
+  background: transparent;
+  border-color: transparent;
+}
+
+.btn-light:not(.active):hover {
+  background: var(--bs-gray-100) !important;
+  border-color: var(--bs-gray-200) !important;
+}
+
+.btn-light.active,
+.btn-light:focus {
+  background: var(--bs-gray-200);
+  border-color: var(--bs-gray-300);
+}
+
+label.btn i {
+  opacity: 0.25;
+  transition: 0.2s;
+}
+
+label.btn.active i {
+  opacity: 0.75;
+}
+
