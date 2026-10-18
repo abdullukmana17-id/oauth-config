@@ -3,5 +3,5 @@ Repositori ini menyediakan sistem konfigurasi OAuth dinamis berbasis CodeIgniter
 
 ---
 ## Contoh Implementasi Halaman
-![Sample](https://raw.githubusercontent.com/abdullukmana17-id/oauth-config/main/sample.png)
+![Sample](https://raw.githubusercontent.com/abdullukmana17-id/oauth-config/main/oauth-config-1.png)
 ---
