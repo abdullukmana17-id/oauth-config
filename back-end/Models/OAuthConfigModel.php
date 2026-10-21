@@ -75,4 +75,27 @@ class OAuthConfigModel extends Model
     protected $afterFind      = [];
     protected $beforeDelete   = [];
     protected $afterDelete    = [];
+
+    public function getEnabledConfigs(): array
+    {
+        $rows = $this->findAll();
+        $configs = [];
+
+        foreach ($rows as $row) {
+            $provider = strtolower(trim($row['provider'] ?? ''));
+
+            if ($provider === '') {
+                continue;
+            }
+
+            $configs[$provider] = [
+                'client_id'      => $row['client_id'] ?? '',
+                'client_secret'  => $row['client_secret'] ?? '',
+                'allow_login'    => (bool) ($row['allow_login'] ?? false),
+                'allow_register' => (bool) ($row['allow_register'] ?? false),
+            ];
+        }
+
+        return $configs;
+    }
 }
